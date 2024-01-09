@@ -1,12 +1,12 @@
-# Introduction
+# Exposed Documentation
+
 
 Welcome to the Exposed documentation!
 
-Exposed is a lightweight SQL library on top of JDBC driver for <a href="https://github.com/JetBrains/kotlin">Kotlin</a>.
-It has two flavors of database access: type-safe SQL wrapping DSL (Domain-Specific Language) and lightweight DAO (Data Access Object).
+Exposed is a <a href="https://github.com/JetBrains/kotlin">Kotlin</a> SQL database library. It has two flavors of 
+database access: a lightweight ORM (using DAO) and type-safe SQL (using DSL).  
 
 Exposed supports the following databases:
-
 * H2
 * MariaDB
 * MySQL
