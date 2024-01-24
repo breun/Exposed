@@ -1,4 +1,4 @@
-# Getting Started
+# Adding Exposed to Existing Project
 
 ## Adding the Exposed dependency
 

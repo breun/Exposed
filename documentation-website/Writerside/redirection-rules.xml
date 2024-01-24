@@ -41,4 +41,12 @@
         <description>Created after removal of "DSL API" from Exposed Documentation</description>
         <accepts>DSL-API.html</accepts>
     </rule>
+    <rule id="7a907023">
+        <description>Created after removal of "Welcome to Writerside!" from Exposed</description>
+        <accepts>Default-topic.html</accepts>
+    </rule>
+    <rule id="21d136e6">
+        <description>Created after removal of "Tutorials and Samples" from Exposed</description>
+        <accepts>Tutorials-and-Samples.html</accepts>
+    </rule>
 </rules>
