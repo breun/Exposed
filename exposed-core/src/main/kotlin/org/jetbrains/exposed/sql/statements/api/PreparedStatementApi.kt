@@ -19,7 +19,7 @@ interface PreparedStatementApi {
      * Sets the value for each column or expression in [args] into the appropriate statement parameter and
      * returns the number of parameters filled.
      */
-    fun fillParameters(args: Iterable<Pair<IColumnType, Any?>>): Int {
+    fun fillParameters(args: Iterable<Pair<IColumnType<*>, Any?>>): Int {
         args.forEachIndexed { index, (c, v) ->
             c.setParameter(this, index + 1, c.valueToDB(v))
         }
@@ -59,7 +59,7 @@ interface PreparedStatementApi {
     operator fun set(index: Int, value: Any)
 
     /** Sets the statement parameter at the [index] position to SQL NULL, if allowed wih the specified [columnType]. */
-    fun setNull(index: Int, columnType: IColumnType)
+    fun setNull(index: Int, columnType: IColumnType<*>)
 
     /**
      * Sets the statement parameter at the [index] position to the provided [inputStream],

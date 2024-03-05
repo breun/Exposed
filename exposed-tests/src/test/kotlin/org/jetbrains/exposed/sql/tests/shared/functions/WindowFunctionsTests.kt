@@ -413,7 +413,7 @@ class WindowFunctionsTests : DatabaseTestsBase() {
 
     private fun <T> DMLTestsData.Sales.assertWindowFunctionDefinition(
         definition: WindowFunctionDefinition<T>,
-        expectedResult: List<T>
+        expectedResult: List<T?>
     ) {
         val result = select(definition)
             .orderBy(

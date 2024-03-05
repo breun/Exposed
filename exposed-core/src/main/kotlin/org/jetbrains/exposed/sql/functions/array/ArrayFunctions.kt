@@ -14,12 +14,12 @@ import org.jetbrains.exposed.sql.vendors.h2Mode
  * Represents an SQL function that returns the array element stored at the one-based [index] position,
  * or `null` if the stored array itself is null.
  */
-class ArrayGet<E, T : List<E>?>(
+class ArrayGet<E, T : List<E?>?>(
     /** The array expression that is accessed. */
     val expression: Expression<T>,
     /** The one-based index position at which the stored array is accessed. */
     val index: Int,
-    columnType: IColumnType
+    columnType: IColumnType<E & Any>
 ) : Function<E?>(columnType) {
     override fun toQueryBuilder(queryBuilder: QueryBuilder) {
         queryBuilder {
@@ -32,14 +32,14 @@ class ArrayGet<E, T : List<E>?>(
  * Represents an SQL function that returns a subarray of elements stored from between [lower] and [upper] bounds (inclusive),
  * or `null` if the stored array itself is null.
  */
-class ArraySlice<E, T : List<E>?>(
+class ArraySlice<E, T : List<E?>?>(
     /** The array expression from which the subarray is returned. */
     val expression: Expression<T>,
     /** The lower bounds (inclusive) of a subarray. If left `null`, the database will use the stored array's lower limit. */
     val lower: Int?,
     /** The upper bounds (inclusive) of a subarray. If left `null`, the database will use the stored array's upper limit. */
     val upper: Int?,
-    columnType: IColumnType
+    columnType: IColumnType<T & Any>
 ) : Function<T>(columnType) {
     override fun toQueryBuilder(queryBuilder: QueryBuilder) {
         val functionProvider = when (currentDialect.h2Mode) {

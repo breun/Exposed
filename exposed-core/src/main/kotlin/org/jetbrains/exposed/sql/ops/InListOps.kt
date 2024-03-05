@@ -69,7 +69,7 @@ abstract class InListOrNotInListBaseOp<V>(
  * To inverse the operator and check if [expr] is **not** in [list], set [isInList] to `false`.
  */
 class SingleValueInListOp<T>(
-    override val expr: ExpressionWithColumnType<out T>,
+    override val expr: ExpressionWithColumnType<T>,
     list: Iterable<T>,
     isInList: Boolean = true
 ) : InListOrNotInListBaseOp<T>(expr, list, isInList) {
